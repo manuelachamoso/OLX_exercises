@@ -1,15 +1,18 @@
-import React from 'react'
 import Book from './Book'
 
-const Shelf = () => {
+const Shelf = ({section, books, category, changeShelf}) => {
+  const booksCategory = books.filter((book) => book.shelf === category)
+  console.log(booksCategory)
+  
+  console.log(books)
   return (
     <div className="bookshelf">
-                <h2 className="bookshelf-title">Currently Reading</h2>
+                <h2 className="bookshelf-title">{section}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
-                    <li>
-                      <Book />
-                    </li>
+                      {booksCategory.map((book) => (
+                        <Book key={book.id}  book={book} changeShelf={changeShelf}/>
+                      ))}
                     </ol>
               </div>
     </div>
