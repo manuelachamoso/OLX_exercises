@@ -118,11 +118,14 @@ button {
 
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  
 }
 .books-grid li {
-  padding: 10px 15px;
-  text-align: left;
+  padding: 10px 0px 10px 10px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
 }
 
 .book {
@@ -137,6 +140,9 @@ button {
 }
 .book-authors {
   color: #999;
+}
+.book-description {
+  font-size: 0.8rem;
 }
 
 .book-top {
@@ -177,4 +183,8 @@ button {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+.book-info {
+  border: 1px solid red;
 }

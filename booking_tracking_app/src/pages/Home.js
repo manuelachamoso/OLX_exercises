@@ -1,7 +1,7 @@
 import React from 'react'
 import Shelf from '../components/Shelf'
 import {Link} from 'react-router-dom'
-
+import BookInfo from '../components/BookInfo'
 
 const Home = ({books, changeShelf}) => {
   return (
@@ -10,6 +10,9 @@ const Home = ({books, changeShelf}) => {
             <h1>MyReads</h1>
           </div>
           <div className="list-books-content">
+            <div>
+              <BookInfo books={books} />
+            </div>
             <div>
             <Shelf section='Currently Reading' books={books} category="currentlyReading" changeShelf={changeShelf} />
             <Shelf section='Want to read' books={books} category="wantToRead" changeShelf={changeShelf} />

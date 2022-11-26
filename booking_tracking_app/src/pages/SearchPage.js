@@ -1,7 +1,27 @@
 import {Link} from 'react-router-dom'
+import {search} from '../BooksAPI'
+import { useState } from 'react'
+import Book from '../components/Book'
 
-const SearchPage = ({handleChange, search, bookFromSearch}) => {
-  return (
+const SearchPage = ({changeShelf}) => {
+  const [query, setQuery] = useState('')
+  const [newBook, setNewBook] = useState([])
+
+  const handleChange = async (e) => {
+    try {
+      const query = e.target.value;
+      setQuery(query)
+      if(query.trim()){
+      
+      const results = await search(query)
+      setNewBook(results)
+    }
+    } catch (error) {
+      console.log('error')
+    }
+  }
+
+   return (
     <div className="search-books">
           <div className="search-books-bar">
             <Link to='/' className='close-search'>Close</Link>
@@ -10,20 +30,26 @@ const SearchPage = ({handleChange, search, bookFromSearch}) => {
                 type="text"
                 placeholder="Search by title, author, or ISBN"
                 onChange={handleChange}
+                value={query}
               />
             </div>
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
-              {bookFromSearch.map((book) => (
-                <div>
-                  <div>{book.title}</div>
-                </div>
-              ))}
+              <li>{newBook.length >= 0 ? newBook.map(book => (
+                  <Book key={book.id}  book={book} changeShelf={changeShelf}/>)): (
+                    <span>'No book'</span>
+                  )}
+              </li>
             </ol>
+            <div>
+            </div>
           </div>
         </div>
   )
 }
+
+
+
 
 export default SearchPage;
