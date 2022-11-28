@@ -2,7 +2,6 @@ import Book from './Book'
 
 const Shelf = ({section, books, category, changeShelf}) => {
   const booksCategory = books.filter((book) => book.shelf === category)
-  console.log(booksCategory)
   
   console.log(books)
   return (

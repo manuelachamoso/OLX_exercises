@@ -49,7 +49,4 @@ const SearchPage = ({changeShelf}) => {
   )
 }
 
-
-
-
 export default SearchPage;

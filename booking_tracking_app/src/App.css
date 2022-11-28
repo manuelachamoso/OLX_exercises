@@ -185,6 +185,40 @@ button {
   font-size: 0.8em;
 }
 
+/*Book Info */
+.books-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex; 
+}
+.books-container li {
+  padding: 10px;
+}
+
 .book-info {
-  border: 1px solid red;
+  width: 300px;
+  object-fit: contain;
+  padding: 3rem;
+  align-items: center;
+}
+.book-title-info,
+.book-authors-info {
+  font-size: 1.2em;
+}
+.book-title-info {
+  margin-top: 10px;
+}
+.book-authors-info {
+  color: #999;
+}
+.book-description {
+  font-size: 1rem;
+  text-align: justify;
+}
+.book-top-info {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
 }
