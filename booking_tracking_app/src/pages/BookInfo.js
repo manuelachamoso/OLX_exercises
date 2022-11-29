@@ -1,11 +1,13 @@
 import {useState} from 'react'
 import Modal from '../components/Modal'
+import { Link } from 'react-router-dom'
 
 const BookInfo = ({books}) => {
 const [toggle, setToggle] = useState("")
 
   return (
     <div>
+      <Link to='/' className='close-search'>Close</Link>
         <h1 className='book-details'>Books details</h1>
         {books.map(({ title, description, id, imageLinks, authors }) => {
         return (
