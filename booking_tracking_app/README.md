@@ -68,3 +68,45 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### React-router-dom
+
+The react-router-dom package contains bindings for using React Router in web applications. Please follow the following steps to install the package and adding routes in your React Project.
+
+**Open up your terminal add:**
+```sh
+npm install react-router-dom
+```
+**Adding a Router:**
+
+First thing to do is create a [Browser Router][createbrowserrouter] and configure our first route. This will enable client side routing for our web app.
+
+The `main.jsx` file is the entry point. Open it up and we'll put React Router on the page.
+
+**Create and render a [browser router][createbrowserrouter] in `main.jsx`**
+
+```jsx lines=[3-7,10-15,19] filename=src/main.jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import "./index.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
+This first route is what we often call the "root route" since the rest of our routes will render inside of it. It will serve as the root layout of the UI, we'll have nested layouts as we get farther along.

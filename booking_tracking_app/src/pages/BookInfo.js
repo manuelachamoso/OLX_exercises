@@ -1,41 +1,43 @@
 import {useState} from 'react'
+import Modal from '../components/Modal'
 
 const BookInfo = ({books}) => {
-const [toggle, setToggle] = useState(true)
+const [toggle, setToggle] = useState("")
 
   return (
     <div>
-        <h1>Books details</h1>
-        <br></br>
-        {books.map((book, index) => {
-            return (
-                <ol className="books-container">
-              <li>
-              <div className='book-info' key={index}>
-                    <div className="book-top-info">
-                        <div
-                        className="book-cover-info"
-                        style={{
-                        width: 128,
-                        height: 193,
-                        backgroundImage:`url(${book.imageLinks ? book.imageLinks.smallThumbnail : ""})`,
-                        }}></div>
-                    </div>
-                <div className="book-title-info">{book.title}</div>
-                <div className="book-authors-info">{book.authors}</div> 
-
-                <button onClick={() => setToggle(!toggle)}>Read more</button>
-                {toggle && (
-                    <div className="book-description">{book.description}</div> 
-                )}
-                
+        <h1 className='book-details'>Books details</h1>
+        {books.map(({ title, description, id, imageLinks, authors }) => {
+        return (
+          <div className='books-info-container'>            
+            <div className="book">
+             <div className="book-top">
+                <div
+                className="book-cover"
+                style={{
+                width: 128,
+                height: 193,
+                backgroundImage:`url(${imageLinks ? imageLinks.smallThumbnail : ""})`,
+                }}></div>
                 </div>
-              </li>
-              </ol>
-                
-            )
-        })}
+            <div className="book-title">{title}</div>
+        <div className="book-authors">{authors.join(' and ')}</div> 
+        <div className="read-more">
+        <button className='read-more'onClick={() => setToggle(id)}>Read more</button>
+        </div>
     </div>
+
+           
+            {toggle === id ? (
+              <>
+                <p><Modal setToggle={setToggle} description={description} title={title}/></p>
+                
+              </>
+            ) : null}
+          </div>
+        ); 
+      })}
+  </div>
   )
 }
 
