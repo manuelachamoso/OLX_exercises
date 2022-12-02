@@ -234,10 +234,10 @@ button {
   }
 
 /* Modal */
-.modalBackground {
+.modal-background {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200);
+  background-color: transparent;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -250,53 +250,54 @@ button {
   z-index: 1;
 }
 
-.modalContainer {
+.modal-container {
   width: 900px;
-  height: 600px;
+  height: 500px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  overflow-y: auto;
 }
 
-.modalContainer .title {
+.modal-container .title {
   display: inline-block;
   text-align: center;
 }
 
-.titleCloseBtn {
+.title-closeBtn {
   display: flex;
   justify-content: flex-end;
 }
 
-.titleCloseBtn button {
+.title-closeBtn button {
   background-color: transparent;
   border: none;
   font-size: 25px;
   cursor: pointer;
 }
 
-.modalContainer .body {
+.modal-container .body {
   flex: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .95rem;
+  font-size: .9rem;
   text-align: center;
   text-align: justify;
   padding: 0 10px;
 }
 
-.modalContainer .footer {
+.modal-container .footer {
   flex: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modalContainer .footer button {
+.modal-container .footer button {
   width: 100px;
   height: 35px;
   margin: 10px;
@@ -306,4 +307,27 @@ button {
   border-radius: 8px;
   font-size: 0.95rem;
   cursor: pointer;
+}
+
+.modal-container:hover::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+.modal-container:hover::-webkit-scrollbar-thumb{
+  background-color: rgba(173, 181, 189, 0.5);
+  border-radius: 0.375rem;
+}
+
+.modal-container::-webkit-scrollbar{
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.modal-container::-webkit-scrollbar-track, .modal-container::-webkit-scrollbar-thumb{
+  background-color: transparent;
+}
+
+.modal-container::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(106, 113, 120, 0.5);
+  border-radius: 0.375rem;
 }

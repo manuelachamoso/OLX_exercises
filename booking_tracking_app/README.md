@@ -38,37 +38,6 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
 ### React-router-dom
 
 The react-router-dom package contains bindings for using React Router in web applications. Please follow the following steps to install the package and adding routes in your React Project.
@@ -110,3 +79,36 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 ```
 
 This first route is what we often call the "root route" since the rest of our routes will render inside of it. It will serve as the root layout of the UI, we'll have nested layouts as we get farther along.
+
+### About my project
+**To start developing the project:**
+- In order to install all project depedencies:
+```sh
+npm install
+```
+
+- To start development server with:
+```sh
+npm start
+```
+
+- You can see the project in live using in the browser:
+```sh
+http://localhost:3000/
+```
+**Functionalities:**
+#### Home Page
+- [x] We can sorted the books into the categories: Currently Reading, Want to Read and Read.
+- [x] There is a button in the bottom part of the book where you can change between shelves. 
+- [x] In the footer of the page you have a button to navigate to Search Page.
+- [x] If you want to see more information about the book, just click on "books details".
+- [x] If there are no books on the shelf, a message will appear stating that "There are no books on this shelf".
+
+#### Search page
+- [x] You can search the book by the name of the book.
+- [x] When you start typing, a list of books with the letters you're looking for will start to appear.
+- [x] If there is no book available with the name you are looking for, you will see a empty page.
+
+- [x] 
+- [x] 
+

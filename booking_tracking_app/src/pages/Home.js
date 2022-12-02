@@ -1,9 +1,8 @@
 import React from 'react'
 import Shelf from '../components/Shelf'
 import {Link} from 'react-router-dom'
-import Readmore from '../components/Readmore'
 
-const Home = ({books, changeShelf}) => {
+const Home = ({books, changeShelf, error}) => {
   return (
     <div className="list-books">
           <div className="list-books-title">
@@ -14,11 +13,8 @@ const Home = ({books, changeShelf}) => {
             </div>
             <div>
             <Shelf section='Currently Reading' books={books} category="currentlyReading" changeShelf={changeShelf} />
-            <Readmore/>
             <Shelf section='Want to read' books={books} category="wantToRead" changeShelf={changeShelf} />
-            <Readmore/>
             <Shelf section='Read' books={books} category="read" changeShelf={changeShelf}/>
-            <Readmore/>
             </div>
             <div className="open-search">
               <Link to='/search' className='open-search'>Add a book</Link>

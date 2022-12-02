@@ -4,7 +4,6 @@ import SearchPage from "./pages/SearchPage";
 import { Routes, Route } from 'react-router-dom';
 import {useState, useEffect} from 'react'
 import * as BooksAPI from './BooksAPI';
-import BookInfo from "./pages/BookInfo";
 
 const App = () => {
   const [books, setBooks] = useState([])
@@ -20,11 +19,11 @@ const App = () => {
     BooksAPI.getAll().then(books => setBooks(books))
   }  
 
+
   return (
         <Routes>
             <Route path='/' element={<Home books={books} changeShelf={changeShelf} search={search}/>} />
             <Route path='search' element={<SearchPage changeShelf={changeShelf} />} />
-            <Route path='books' element={<BookInfo books={books} changeShelf={changeShelf} />} />
         </Routes>
   )
 }

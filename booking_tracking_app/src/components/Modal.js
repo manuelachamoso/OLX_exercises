@@ -1,8 +1,8 @@
-function Modal({ setToggle, description, title }) {
+function Modal({ setToggle, description, title, image }) {
   return (
-    <div className="modalBackground">
-      <div className="modalContainer">
-        <div className="titleCloseBtn">
+    <div className="modal-background">
+      <div className="modal-container">
+        <div className="title-closeBtn">
           <button
             onClick={() => {
                 setToggle(false);
@@ -12,7 +12,14 @@ function Modal({ setToggle, description, title }) {
           </button>
         </div>
         <div className="title">
-            <h2>{title}</h2>
+        <div
+                className="book-cover"
+                style={{
+                width: 128,
+                height: 193,
+                backgroundImage:`url(${image ? image : ""})`,
+                }}></div>            
+        <h2>{title}</h2>
         </div>
         <div className="body">
             <p>{description}</p>

@@ -21,6 +21,8 @@ const SearchPage = ({changeShelf}) => {
     }
   }
 
+  const print = newBook.length >= 0 && query !== ''
+
    return (
     <div className="search-books">
           <div className="search-books-bar">
@@ -36,9 +38,9 @@ const SearchPage = ({changeShelf}) => {
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
-              <li>{newBook.length >= 0 ? newBook.map(book => (
+              <li>{print ? newBook.map(book => (
                   <Book key={book.id}  book={book} changeShelf={changeShelf}/>)): (
-                    <span>'No book'</span>
+                    ''
                   )}
               </li>
             </ol>

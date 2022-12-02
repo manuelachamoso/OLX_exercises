@@ -1,10 +1,13 @@
-import React from 'react'
+import {useState} from 'react'
+import Modal from './Modal'
 
 const Book = ({book, changeShelf}) => {
+    const [toggle, setToggle] = useState("")
+
     const updateShelf = (e) => {
         changeShelf(book, e.target.value)
-        console.log(e.target.value)
     }
+
     return (
         <div className="book">
              <div className="book-top">
@@ -17,8 +20,7 @@ const Book = ({book, changeShelf}) => {
                 }}></div>
                 <div className="book-shelf-changer" value={book.shelf}>
                     <select onChange={updateShelf}>
-                    <option value="none">
-                    Move to...</option>
+                    <option value="" hidden>Move to</option>
                     <option value="currentlyReading">
                     Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
@@ -28,7 +30,17 @@ const Book = ({book, changeShelf}) => {
                 </div>
                 </div>
             <div className="book-title">{book.title}</div>
-        <div className="book-authors">{book.authors.join(' and ')}</div> 
+        <div className="book-authors">{book.authors !== undefined ? book.authors.join(', ') : ''}</div> 
+            <button onClick={() => setToggle(book.id)}> 
+            Read more</button>
+            <div>
+            {toggle === book.id ? (
+              <>
+                <Modal setToggle={setToggle} description={book.description} title={book.title} image={book.imageLinks.smallThumbnail}/>
+                
+              </>
+            ) : null}
+        </div>
     </div>
     )}
 
